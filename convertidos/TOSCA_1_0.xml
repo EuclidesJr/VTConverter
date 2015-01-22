@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" id="TOSCADefinition" targetNamespace="http://vtconverter.esy.es/Definitions/" xmlns:my="http://vtconverter.esy.es/Definitions/">
+  <Import importType="http://www.w3.org/2001/XMLSchema" namespace="http://vtconverter.esy.es/Definitions"/>
+  <ServiceTemplate id="0">
+    <Tags>
+      <Tag name="startDate" value="2013-01-19T12:00:00"/>
+      <Tag name="totalTime" value="PT4H"/>
+      <Tag name="owner" value="gkoslovski"/>
+      <Tag name="user" value="gkoslovski"/>
+    </Tags>
+    <TopologyTemplate>
+      <NodeTemplate id="0" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <location>1</location>
+            <cpu>
+              <cores>
+                <simple>7</simple>
+              </cores>
+              <frequency>
+                <unit>GHz</unit>
+                <simple>1</simple>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>4</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage/>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <NodeTemplate id="1" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <location>2</location>
+            <cpu>
+              <cores>
+                <simple>5</simple>
+              </cores>
+              <frequency>
+                <unit>GHz</unit>
+                <simple>3</simple>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage/>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <NodeTemplate id="2" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <location>2</location>
+            <cpu>
+              <cores>
+                <simple>5</simple>
+              </cores>
+              <frequency>
+                <unit>GHz</unit>
+                <simple>2</simple>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>8</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage/>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <NodeTemplate id="3" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <location>9</location>
+            <cpu>
+              <cores>
+                <simple>8</simple>
+              </cores>
+              <frequency>
+                <unit>GHz</unit>
+                <simple>3</simple>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>8</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage/>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <RelationshipTemplate id="0-2" type="TOSCAlink">
+        <Properties>
+          <my:MyRelationshipTemplateProperties>
+            <bandwidth>
+              <forward>
+                <unit>Mbps</unit>
+                <simple>4</simple>
+              </forward>
+              <reverse>
+                <unit>Mbps</unit>
+                <simple>4</simple>
+              </reverse>
+            </bandwidth>
+            <latency>
+              <unit>ms</unit>
+              <simple>50</simple>
+            </latency>
+          </my:MyRelationshipTemplateProperties>
+        </Properties>
+        <SourceElement ref="0"/>
+        <TargetElement ref="2"/>
+      </RelationshipTemplate>
+      <RelationshipTemplate id="1-3" type="TOSCAlink">
+        <Properties>
+          <my:MyRelationshipTemplateProperties>
+            <bandwidth>
+              <forward>
+                <unit>Mbps</unit>
+                <simple>6</simple>
+              </forward>
+              <reverse>
+                <unit>Mbps</unit>
+                <simple>6</simple>
+              </reverse>
+            </bandwidth>
+            <latency>
+              <unit>ms</unit>
+              <simple>100</simple>
+            </latency>
+          </my:MyRelationshipTemplateProperties>
+        </Properties>
+        <SourceElement ref="1"/>
+        <TargetElement ref="3"/>
+      </RelationshipTemplate>
+    </TopologyTemplate>
+  </ServiceTemplate>
+  <NodeType name="TOSCANodeType">
+    <PropertiesDefinition element="my:MyNodeTemplateProperties"/>
+  </NodeType>
+  <RelationshipType name="TOSCAlink">
+    <PropertiesDefinition element="my:MyRelationshipTemplateProperties"/>
+  </RelationshipType>
+</Definitions>

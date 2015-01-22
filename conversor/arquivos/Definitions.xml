@@ -1,0 +1,321 @@
+<!--
+	 * 	Copyright (c) 2015 Euclides Cardoso Júnior <euclides.c.jr@hotmail.com>
+	 * 	Permission is hereby granted, free of charge, to any person
+	 * 	obtaining a copy of this software and associated documentation
+	 * 	files (the "Software"), to deal in the Software without
+	 * 	restriction, including without limitation the rights to use, copy,
+	 * 	modify, merge, publish, distribute, sublicense, and/or sell copies
+	 * 	of the Software, and to permit persons to whom the Software is
+	 * 	furnished to do so, subject to the following conditions:
+	 * 
+	 * 	The above copyright notice and this permission notice shall be
+	 * 	included in all copies or substantial portions of the Software.
+	 * 
+	 * 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	 * 	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+	 * 	OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	 * 	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	 * 	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	 * 	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	 * 	FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	 * 	OTHER DEALINGS IN THE SOFTWARE.
+	 *  
+	 * -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	
+	<!-- vResource definition -->
+	<xs:group name="vResource">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="common"></xs:group>
+				<xs:element name="model" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="exclusivity" type="xs:boolean"
+					minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="tag" type="tag" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="tag">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="key" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="value" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="vNodeProperties">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="vResource"></xs:group>
+				<xs:element name="device" type="xs:string" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+				<xs:element name="image" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="memory" type="capacity" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="storage" type="capacity"
+					minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="cpu" type="cpu" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:element>
+
+	<xs:element name="vStorageProperties">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="vResource"></xs:group>
+				<xs:element name="type" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="image" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="size" type="capacity" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:element>
+	
+	<xs:element name="vLinkProperties">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="vResource"></xs:group>
+				<xs:element name="source" type="xs:string" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="destination" type="xs:string"
+					minOccurs="1" maxOccurs="1"></xs:element>
+				<xs:element name="bandwidth" type="bandwidth"
+					minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="latency" type="capacity"
+					minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:element>
+		
+	<xs:element name="vRouterProperties">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="vResource"></xs:group>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="memory" type="capacity" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="controlPlane" type="controlPlane"
+					minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:element>
+	
+	<xs:element name="vAccessPointProperties">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="vResource"></xs:group>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="loadBalancer" type="loadBalancer"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="nat" type="nat" minOccurs="1"
+						maxOccurs="1" />
+					<xs:element name="masquerade" type="masquerade"
+						minOccurs="1" maxOccurs="unbounded" />
+				</xs:choice>
+			</xs:choice>
+		</xs:sequence>		
+	</xs:element>
+	
+	<xs:complexType name="loadBalancer">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="inEndpoint" type="xs:string" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="addressNumber" type="xs:integer"
+					minOccurs="1" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="nat">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="inEndpoint" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="inPort" type="xs:integer" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="protocol" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="outPort" type="xs:integer" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="masquerade">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="inEndpoint" type="xs:string" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+				<xs:element name="region" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="controlPlane">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="layer" type="xs:string" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="type" type="xs:string" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="routingProtocol" type="xs:string"
+					minOccurs="1" maxOccurs="1"></xs:element>
+				<xs:element name="routingTable" type="routingTable"
+					minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="routingTable">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="rtSize" type="xs:integer" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="route" type="route" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="route">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="source" type="xs:string" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="destination" type="xs:string"
+					minOccurs="1" maxOccurs="1"></xs:element>
+				<xs:element name="vLinkIn" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="vLinkOut" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bandwidth">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="forward" type="capacity"
+					minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="reverse" type="capacity"
+					minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="cpu">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="architecture" type="xs:string"
+					minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="cores" type="capacity" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="frequency" type="capacity"
+					minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="capacity">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="unit" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="event" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:choice>
+					<xs:element name="interval" type="interval"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="simple" type="xs:double" minOccurs="1"
+						maxOccurs="1" />
+					<xs:element name="set" type="xs:double" minOccurs="1"
+						maxOccurs="unbounded" />
+					<xs:element name="scale" type="scale" minOccurs="1"
+						maxOccurs="1" />
+				</xs:choice>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="interval">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="min" type="xs:double" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="max" type="xs:double" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="scale">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="min" type="xs:double" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="max" type="xs:double" minOccurs="1"
+					maxOccurs="1"></xs:element>
+				<xs:element name="step" type="xs:double" minOccurs="1"
+					maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:group name="common">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="id" type="xs:string" maxOccurs="1"
+					minOccurs="1"></xs:element>
+				<xs:element name="location" type="xs:string" maxOccurs="1"
+					minOccurs="0"></xs:element>
+				<xs:element name="startDate" type="xs:dateTime"
+					maxOccurs="1" minOccurs="0"></xs:element>
+				<xs:element name="totalTime" type="xs:duration"
+					maxOccurs="1" minOccurs="0"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+
+</xs:schema>
+
+---
+--vResource
+--tag
+--commom ------------
+--capacity ----------
+--cpu----------------
+--bandwidth ---------
+--controlPlane ------
+--loadBalancer ------
+--nat ---------------
+--masquerade --------
+--routingTable ------
+--route -------------
+--interval ----------
+--scale -------------

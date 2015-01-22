@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" id="TOSCADefinition" targetNamespace="http://vtconverter.esy.es/Definitions/" xmlns:my="http://vtconverter.esy.es/Definitions/">
+  <Import importType="http://www.w3.org/2001/XMLSchema" namespace="http://vtconverter.esy.es/Definitions"/>
+  <ServiceTemplate id="Video_on_demand">
+    <Tags>
+      <Tag name="owner" value="SAIL"/>
+    </Tags>
+    <TopologyTemplate>
+      <NodeTemplate id="vn1" type="TOSCAvNodeType">
+        <Properties>
+          <my:vNodeProperties>
+            <cpu>
+              <cores>
+                <simple>64</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>6.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>100</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>3000</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </my:vNodeProperties>
+        </Properties>
+      </NodeTemplate>
+      <NodeTemplate id="vn2" type="TOSCAvNodeType">
+        <Properties>
+          <my:vNodeProperties>
+            <cpu>
+              <cores>
+                <simple>4</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>10</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>30</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </my:vNodeProperties>
+        </Properties>
+      </NodeTemplate>
+      <RelationshipTemplate id="link1" type="TOSCAvLinkType">
+        <Properties>
+          <my:vLinkProperties>
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </my:vLinkProperties>
+        </Properties>
+        <SourceElement ref="vn1"/>
+        <TargetElement ref="vn1"/>
+      </RelationshipTemplate>
+    </TopologyTemplate>
+  </ServiceTemplate>
+  <NodeType name="TOSCAvNodeType">
+    <PropertiesDefinition element="my:vNodeProperties"/>
+  </NodeType>
+  <RelationshipType name="TOSCAvLinkType">
+    <PropertiesDefinition element="my:vLinkProperties"/>
+  </RelationshipType>
+</Definitions>

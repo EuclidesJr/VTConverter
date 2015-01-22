@@ -1,0 +1,14 @@
+CREATE TABLE `arquivo` (
+  `idarquivo` int(11) NOT NULL,
+  `arqnome` varchar(45) NOT NULL,
+  `arqtam` varchar(45) NOT NULL,
+  `arqnometemp` varchar(45) NOT NULL,
+  `arqusu` int(11) NOT NULL,
+  `arqconvertido` varchar(1) DEFAULT NULL,
+  `arqconvertidoid` int(11) DEFAULT NULL,
+  `dataconvertido` date DEFAULT NULL,
+  `dataupload` date NOT NULL,
+  PRIMARY KEY (`idarquivo`),
+  KEY `fk_arq_usu_idx` (`arqusu`),
+  CONSTRAINT `fk_arq_usu` FOREIGN KEY (`arqusu`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE
+);

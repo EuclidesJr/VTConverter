@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.vxdlforum.org/vxdl"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ens-lyon.fr/LIP/RESO/Software/vxdl VXDL.xsd ">
+	<virtualInfrastructure>
+		<id>test</id>
+		<startDate>2010-04-21T08:00:00</startDate>
+		<totalTime>PT4H</totalTime>
+		<owner>0C7F0E6F-5599-4DF4-B1FC-AE48E61FDD67</owner>
+		<user>userLyon</user>
+			<vNode id="node test">
+				<location>paris.fr</location>
+				<startDate>2010-04-21T08:00:00</startDate>
+				<totalTime>PT4H</totalTime>
+				<software>software 1</software>
+				<software>software 2</software>
+				<cpu>
+					<cores>1</cores>
+					<frequency>
+						<interval>
+							<min>2.0</min>
+						</interval>
+						<unit>GHz</unit>
+					</frequency>
+				</cpu>
+				<memory>
+					<simple>1</simple>
+					<unit>GB</unit>
+				</memory>
+				<storage>
+					<interval>
+						<min>300</min>
+					</interval>
+					<unit>GB</unit>
+				</storage>
+				<security>gold</security>
+				<reliability>bronze</reliability>
+			</vNode>
+	</virtualInfrastructure>
+</description>

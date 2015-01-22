@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<description xmlns="http://www.vxdlforum.org/vxdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vxdlforum.org/vxdl VXDL.xsd">
+  <virtualInfrastructure>
+    <id>VR3</id>
+    <startDate>2013-01-19T12:00:00</startDate>
+    <totalTime>PT4H</totalTime>
+    <owner>0C7F0E6F-5599-4DF4-B1FC-AE48E61FDD67</owner>
+    <user>gkoslovski</user>
+  </virtualInfrastructure>
+</description>

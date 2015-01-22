@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<tosca:Definitions id="TOSCADefinition" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12" targetNamespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes">
+  <tosca:Import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/tcc/udesc" location="../imports/Definitions.xsd"/>
+  <tosca:ServiceTemplate id="teste">
+    <tosca:Tags>
+      <tosca:Tag name="owner" value="euclides"/>
+      <tosca:Tag name="user" value="userEuclides"/>
+      <tosca:Tag name="totalTime" value="PT4H"/>
+    </tosca:Tags>
+    <tosca:TopologyTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn1" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>2</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn2" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn3" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn4" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn5" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn6" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn7" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>300</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vn8" type="tst:TOSCAvNodeType">
+        <tosca:Properties>
+          <ns1:vNodeProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>2</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage>
+              <interval>
+                <min>30</min>
+              </interval>
+              <unit>GB</unit>
+            </storage>
+          </ns1:vNodeProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="ap" type="tst:TOSCAvAccessPointType">
+        <tosca:Properties>
+          <ns1:vAccessPointProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <nat>
+              <inPort>22</inPort>
+              <inEndpoint>vr1</inEndpoint>
+              <region>1</region>
+              <outPort>22</outPort>
+              <protocol>TCP</protocol>
+            </nat>
+          </ns1:vAccessPointProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="loadbalancer" type="tst:TOSCAvAccessPointType">
+        <tosca:Properties>
+          <ns1:vAccessPointProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <loadBalancer>
+              <inEndpoint>vn1</inEndpoint>
+              <region>1</region>
+              <addressNumber>22</addressNumber>
+            </loadBalancer>
+          </ns1:vAccessPointProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="masquerade" type="tst:TOSCAvAccessPointType">
+        <tosca:Properties>
+          <ns1:vAccessPointProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <masquerade>
+              <inEndpoint>vn1</inEndpoint>
+              <region>1</region>
+            </masquerade>
+          </ns1:vAccessPointProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vr1" type="tst:TOSCAvRouterType">
+        <tosca:Properties>
+          <ns1:vRouterProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <region>1</region>
+            <memory>
+              <simple>2</simple>
+              <unit>GB</unit>
+            </memory>
+            <controlPlane>
+              <layer>layer1</layer>
+              <routingProtocol>teste</routingProtocol>
+              <routingTable>
+                <rtSize>100</rtSize>
+                <route>
+                  <source>vn1</source>
+                  <destination>vn2</destination>
+                </route>
+              </routingTable>
+            </controlPlane>
+          </ns1:vRouterProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:NodeTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="vr2" type="tst:TOSCAvRouterType">
+        <tosca:Properties>
+          <ns1:vRouterProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <region>2</region>
+            <memory>
+              <simple>2</simple>
+              <unit>GB</unit>
+            </memory>
+            <controlPlane>
+              <layer>layer1</layer>
+              <routingProtocol>teste</routingProtocol>
+              <routingTable>
+                <rtSize>100</rtSize>
+                <route>
+                  <source>vn3</source>
+                  <destination>vn1</destination>
+                </route>
+              </routingTable>
+            </controlPlane>
+          </ns1:vRouterProperties>
+        </tosca:Properties>
+      </tosca:NodeTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link1" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn1"/>
+        <tosca:TargetElement ref="vr2"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link2" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn2"/>
+        <tosca:TargetElement ref="vr2"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link3" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn3"/>
+        <tosca:TargetElement ref="vr2"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link4" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn4"/>
+        <tosca:TargetElement ref="vr2"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link5" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn5"/>
+        <tosca:TargetElement ref="vr1"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link6" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn6"/>
+        <tosca:TargetElement ref="vr1"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link7" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn7"/>
+        <tosca:TargetElement ref="vr1"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link8" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vn8"/>
+        <tosca:TargetElement ref="vr1"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link9" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vr1"/>
+        <tosca:TargetElement ref="vr2"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link10" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vr1"/>
+        <tosca:TargetElement ref="ap"/>
+      </tosca:RelationshipTemplate>
+      <tosca:RelationshipTemplate xmlns:tst="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaSpecificTypes" id="link11" type="tst:TOSCAvLinkType">
+        <tosca:Properties>
+          <ns1:vLinkProperties xmlns="http://www.example.com/tcc/udesc" xmlns:ns1="http://www.example.com/tcc/udesc">
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </ns1:vLinkProperties>
+        </tosca:Properties>
+        <tosca:SourceElement ref="vr1"/>
+        <tosca:TargetElement ref="ap"/>
+      </tosca:RelationshipTemplate>
+    </tosca:TopologyTemplate>
+  </tosca:ServiceTemplate>
+  <tosca:NodeType name="TOSCAvNodeType">
+    <tosca:PropertiesDefinition element="ns2:vNodeProperties" xmlns:ns2="http://www.example.com/tcc/udesc"/>
+  </tosca:NodeType>
+  <tosca:NodeType name="TOSCAvRouterType">
+    <tosca:PropertiesDefinition element="ns2:vRouterProperties" xmlns:ns2="http://www.example.com/tcc/udesc"/>
+  </tosca:NodeType>
+  <tosca:RelationshipType name="TOSCAvLinkType">
+    <tosca:PropertiesDefinition element="ns3:vLinkProperties" xmlns:ns3="http://www.example.com/tcc/udesc"/>
+  </tosca:RelationshipType>
+  <tosca:NodeType name="TOSCAvAccessPointType">
+    <tosca:PropertiesDefinition element="ns2:vAccessPointProperties" xmlns:ns2="http://www.example.com/tcc/udesc"/>
+  </tosca:NodeType>
+</tosca:Definitions>

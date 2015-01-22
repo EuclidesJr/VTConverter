@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> <description xmlns="http://www.vxdlforum.org/vxdl"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.vxdlforum.org/vxdl VXDL.xsd">
+<virtualInfrastructure>
+<id>84</id><startDate>2013-01-19T12:00:00</startDate><totalTime>PT4H</totalTime><owner>gkoslovski</owner><user>gkoslovski</user>
+ <vNode><id>0</id><cpu><cores><simple>5</simple></cores> <frequency><unit>GHz</unit><simple>2</simple></frequency></cpu> <memory><simple>8</simple><unit>GB</unit></memory> <storage><simple>20</simple><unit>GB</unit></storage><location>5</location></vNode>
+ <vNode><id>1</id><cpu><cores><simple>3</simple></cores> <frequency><unit>GHz</unit><simple>2</simple></frequency></cpu> <memory><simple>4</simple><unit>GB</unit></memory> <storage><simple>100</simple><unit>GB</unit></storage><location>6</location></vNode>
+ <vNode><id>2</id><cpu><cores><simple>5</simple></cores> <frequency><unit>GHz</unit><simple>1</simple></frequency></cpu> <memory><simple>1</simple><unit>GB</unit></memory> <storage><simple>10</simple><unit>GB</unit></storage><location>7</location></vNode>
+ <vNode><id>3</id><cpu><cores><simple>3</simple></cores> <frequency><unit>GHz</unit><simple>1</simple></frequency></cpu> <memory><simple>2</simple><unit>GB</unit></memory> <storage><simple>20</simple><unit>GB</unit></storage><location>7</location></vNode>
+ <vLink><id>0-3</id><source>0</source><destination>3</destination><bandwidth><forward><unit>Mbps</unit> <simple>7</simple></forward><reverse><unit>Mbps</unit><simple>7</simple></reverse></bandwidth> <latency><unit>ms</unit><simple>200</simple></latency></vLink>
+ <vLink><id>1-2</id><source>1</source><destination>2</destination><bandwidth><forward><unit>Mbps</unit> <simple>7</simple></forward><reverse><unit>Mbps</unit><simple>7</simple></reverse></bandwidth> <latency><unit>ms</unit><simple>50</simple></latency></vLink>
+ <vLink><id>2-3</id><source>2</source><destination>3</destination><bandwidth><forward><unit>Mbps</unit> <simple>8</simple></forward><reverse><unit>Mbps</unit><simple>8</simple></reverse></bandwidth> <latency><unit>ms</unit><simple>100</simple></latency></vLink>
+</virtualInfrastructure></description>

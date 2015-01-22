@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" id="TOSCADefinition" targetNamespace="http://vtconverter.esy.es/Definitions/" xmlns:my="http://vtconverter.esy.es/Definitions/">
+  <Import importType="http://www.w3.org/2001/XMLSchema" namespace="http://vtconverter.esy.es/Definitions"/>
+  <ServiceTemplate id="aaaa">
+    <Tags>
+      <Tag name="owner" value="useaaaarLyon"/>
+      <Tag name="user" value="userLyon"/>
+      <Tag name="totalTime" value="PT4H"/>
+    </Tags>
+    <TopologyTemplate>
+      <NodeTemplate id="paris" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <location>paris.fr</location>
+            <cpu>
+              <cores>
+                <simple>1</simple>
+              </cores>
+              <frequency>
+                <interval>
+                  <min>2.0</min>
+                </interval>
+                <unit>GHz</unit>
+              </frequency>
+            </cpu>
+            <memory>
+              <simple>1</simple>
+              <unit>GB</unit>
+            </memory>
+            <storage/>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <NodeTemplate id="ap" type="TOSCANodeType">
+        <Properties>
+          <my:MyNodeTemplateProperties>
+            <nat>
+              <inPort>22</inPort>
+              <inEndpoint>node test</inEndpoint>
+              <region>1</region>
+              <outPort>22</outPort>
+              <protocol>TCP</protocol>
+            </nat>
+          </my:MyNodeTemplateProperties>
+        </Properties>
+      </NodeTemplate>
+      <RelationshipTemplate id="link1" type="TOSCAlink">
+        <Properties>
+          <my:MyRelationshipTemplateProperties>
+            <bandwidth>
+              <forward>
+                <interval>
+                  <min>1.0</min>
+                </interval>
+                <unit>Mbps</unit>
+              </forward>
+            </bandwidth>
+          </my:MyRelationshipTemplateProperties>
+        </Properties>
+        <SourceElement ref="ap"/>
+        <TargetElement ref="paris"/>
+      </RelationshipTemplate>
+    </TopologyTemplate>
+  </ServiceTemplate>
+  <NodeType name="TOSCANodeType">
+    <PropertiesDefinition element="my:MyNodeTemplateProperties"/>
+  </NodeType>
+  <RelationshipType name="TOSCAlink">
+    <PropertiesDefinition element="my:MyRelationshipTemplateProperties"/>
+  </RelationshipType>
+</Definitions>
